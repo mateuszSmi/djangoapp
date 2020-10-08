@@ -7,6 +7,11 @@ class Klasa(models.Model):
     rok_matury = models.IntegerField("rok matury", default=0)
     rok_naboru = models.IntegerField("rok naboru", default=0)
 
+    class Meta:
+        verbose_name_plural = 'klasy'
+
+    def __str__(self):
+        return self.nazwa
 
 class Absolwent(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
